@@ -1,0 +1,39 @@
+<html ng-app>
+<head>
+    <title>Angular JS Test</title>
+    <!-- <css> -->
+    <link href="../static/cached/${version}/css/main.css" type="text/css" rel="stylesheet">
+    <!-- </css> -->
+</head>
+
+<body>
+
+<!-- <header> -->
+<div src="'../static/cached/${version}/html/snippets/header.html'" ng-include=""></div>
+<!-- </header> -->
+
+<!-- <content> -->
+<div>
+    <label>Name:</label>
+    <input type="text" ng-model="yourName" placeholder="Enter a name here">
+    <hr>
+    <h1>Hello {{yourName}}!</h1>
+</div>
+<!-- </content> -->
+
+<!-- <footer> -->
+<div src="'../static/cached/${version}/html/snippets/footer.html'" ng-include=""></div>
+<!-- </footer> -->
+
+<!-- <scripts> -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/${version.angular}/angular.min.js"></script>
+<script src="../static/cached/${version}/js/app.js"></script>
+<!-- </scripts> -->
+
+<!-- <version-control> -->
+<script>pageVersion = '${version}';</script>
+<script async src="../static/uncached/js/versioncontrol.js"></script>
+<!-- </version-control> -->
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN"
+        "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+
+<urlrewrite>
+
+    <rule>
+        <from>/page/(.*)</from>
+        <to>/static/cached/latest/html/pages/$1</to>
+    </rule>
+    <rule>
+        <from>/static/cached/\w+/(.*)</from>
+        <to>/static/cached/latest/$1</to>
+    </rule>
+
+</urlrewrite>
