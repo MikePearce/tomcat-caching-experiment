@@ -1,0 +1,2 @@
+- run goal tomcat7:run-war
+- in a browser open http://localhost:8080/caching-experiment/page/page.html
