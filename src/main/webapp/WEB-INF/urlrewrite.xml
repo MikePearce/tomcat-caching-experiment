@@ -9,7 +9,7 @@
         <to>/static/uncached/latest/html/$1</to>
     </rule>
     <rule>
-        <from>/static/(cached|unached)/\w+/(.*)</from>
+        <from>/static/(cached|unached)/[\w-]+/(.*)</from>
         <to>/static/$1/latest/$2</to>
     </rule>
 
