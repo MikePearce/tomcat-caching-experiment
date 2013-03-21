@@ -6,11 +6,11 @@
 
     <rule>
         <from>/page/(.*)</from>
-        <to>/static/cached/latest/html/pages/$1</to>
+        <to>/static/uncached/latest/html/$1</to>
     </rule>
     <rule>
-        <from>/static/cached/\w+/(.*)</from>
-        <to>/static/cached/latest/$1</to>
+        <from>/static/(cached|unached)/\w+/(.*)</from>
+        <to>/static/$1/latest/$2</to>
     </rule>
 
 </urlrewrite>
