@@ -1,1 +1,1 @@
-console.log('js resource loaded');
+// put some Javascript here
