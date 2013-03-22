@@ -6,21 +6,26 @@
 
     <!-- pages -->
     <rule>
-        <condition type="path-info" operator="notequal">^/rest/.*</condition>
-        <condition type="path-info" operator="notequal">^/static/.*</condition>
-        <from>^/([\w-_]+).html$</from>
-        <to>/static/latest/$1/$1.html</to>
+        <from>^/?$</from>
+        <to>/static/latest/index/index.html</to>
+    </rule>
+
+    <rule>
+        <condition operator="notequal" type="request-url">.*/static/.*</condition>
+        <condition operator="notequal" type="request-url">.*/rest/.*</condition>
+        <from>^/([^/]+/)*([\w\-_]+)(.html)?$</from>
+        <to>/static/latest/$2/$2.html</to>
     </rule>
 
     <!-- static files that are minified -->
     <rule>
-        <from>^/static/[\w-]+/(.*)\.(js|css)$</from>
+        <from>^/static/[\w\-]+/(.*)\.(js|css)$</from>
         <to>/static/latest/$1.min.$2</to>
     </rule>
 
     <!-- static files that are NOT minified -->
     <rule>
-        <from>^/static/[\w-]+/(.*)\.(html)$</from>
+        <from>^/static/[\w\-]+/(.*)\.(html)$</from>
         <to>/static/latest/$1.$2</to>
     </rule>
 
