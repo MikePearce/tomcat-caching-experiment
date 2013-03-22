@@ -6,21 +6,20 @@
 
     <!-- HTML pages -->
     <rule>
-        <from>^/page/(.*)</from>
-        <to>/static/uncached/latest/html/$1</to>
+        <from>^/page/([\w-_]+).html$</from>
+        <to>/static/latest/$1/$1.html</to>
     </rule>
 
     <!-- static files that are minified -->
     <rule>
-        <condition type="header" name="Accept-Encoding">.*gzip.*</condition>
-        <from>^/static/(cached|unached)/[\w-]+/(.*)\.(js|css)$</from>
-        <to type="forward">/static/$1/latest/$2.min.$3</to>
+        <from>^/static/[\w-]+/(.*)\.(js|css)$</from>
+        <to>/static/latest/$1.min.$2</to>
     </rule>
 
     <!-- static files that are NOT minified -->
     <rule>
-        <from>^/static/(cached|unached)/[\w-]+/(.*)\.(html)$</from>
-        <to type="forward">/static/$1/latest/$2.$3</to>
+        <from>^/static/[\w-]+/(.*)\.(html)$</from>
+        <to>/static/latest/$1.$2</to>
     </rule>
 
 </urlrewrite>

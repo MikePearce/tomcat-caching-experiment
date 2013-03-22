@@ -32,7 +32,7 @@ public class NavigationResource {
     @Produces(MediaType.APPLICATION_JSON)
     public MenuItem[] get() {
         return new MenuItem[] {
-                new MenuItem("Home", "http://localhost:8080/page/page.html"),
+                new MenuItem("Home", "http://localhost:8080/page/index.html"),
                 new MenuItem("Google", "http://www.google.com"),
                 new MenuItem("Amazon", "http://www.amazon.com")
         };
