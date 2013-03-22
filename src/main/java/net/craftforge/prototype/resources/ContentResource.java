@@ -14,9 +14,6 @@ public class ContentResource {
     public static class Content {
         public String text;
 
-        public Content() {
-        }
-
         public Content(String text) {
             this.text = text;
         }

@@ -18,9 +18,6 @@ public class NavigationResource {
         public String name;
         public String url;
 
-        public MenuItem() {
-        }
-
         public MenuItem(String name, String url) {
             this.name = name;
             this.url = url;
