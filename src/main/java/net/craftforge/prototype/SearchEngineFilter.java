@@ -37,18 +37,19 @@ public class SearchEngineFilter implements Filter {
             String prettyUrl = fragmentString.isEmpty() ? url : url + FRAGMENT + fragmentString;
 
             WebClient webClient = new WebClient(BrowserVersion.FIREFOX_17);
-            webClient.getOptions().setJavaScriptEnabled(true);
             HtmlPage htmlPage = webClient.getPage(prettyUrl);
             webClient.waitForBackgroundJavaScript(5000);
 
             String htmlPageAsXml = htmlPage.asXml();
-            webClient.closeAllWindows();
 
             resp.setContentType("text/html");
             resp.setCharacterEncoding("UTF-8");
             resp.setContentLength(-1);
             Writer writer = resp.getWriter();
             writer.write(htmlPageAsXml);
+            writer.flush();
+
+            webClient.closeAllWindows();
         } else {
             chain.doFilter(request, response);
         }
