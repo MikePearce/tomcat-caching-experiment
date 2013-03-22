@@ -4,13 +4,23 @@
 
 <urlrewrite>
 
+    <!-- HTML pages -->
     <rule>
-        <from>/page/(.*)</from>
+        <from>^/page/(.*)</from>
         <to>/static/uncached/latest/html/$1</to>
     </rule>
+
+    <!-- static files that are minified -->
     <rule>
-        <from>/static/(cached|unached)/[\w-]+/(.*)</from>
-        <to>/static/$1/latest/$2</to>
+        <condition type="header" name="Accept-Encoding">.*gzip.*</condition>
+        <from>^/static/(cached|unached)/[\w-]+/(.*)\.(js|css)$</from>
+        <to type="forward">/static/$1/latest/$2.min.$3</to>
+    </rule>
+
+    <!-- static files that are NOT minified -->
+    <rule>
+        <from>^/static/(cached|unached)/[\w-]+/(.*)\.(html)$</from>
+        <to type="forward">/static/$1/latest/$2.$3</to>
     </rule>
 
 </urlrewrite>

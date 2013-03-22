@@ -51,11 +51,16 @@
         <url-pattern>/page/*</url-pattern>
     </servlet-mapping>
 
-    <absolute-ordering>
-        <name>UrlRewriteFilter</name>
-        <name>ExpiresFilter</name>
-    </absolute-ordering>
+    <filter>
+        <filter-name>SearchEngineFilter</filter-name>
+        <filter-class>net.craftforge.prototype.SearchEngineFilter</filter-class>
+    </filter>
 
+    <filter-mapping>
+        <filter-name>SearchEngineFilter</filter-name>
+        <url-pattern>/page/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
 
     <filter>
         <filter-name>UrlRewriteFilter</filter-name>
@@ -99,6 +104,7 @@
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
+
 
 
 </web-app>

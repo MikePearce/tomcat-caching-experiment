@@ -39,6 +39,12 @@
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-html</artifactId>
             <version>2.3.5.Final</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.httpcomponents</groupId>
+                    <artifactId>httpclient</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!-- JSP standard tag library -->
         <dependency>
@@ -59,6 +65,17 @@
             <artifactId>urlrewritefilter</artifactId>
             <version>4.0.3</version>
         </dependency>
+        <!-- SEO Support for client-side rendered pages -->
+        <dependency>
+            <groupId>net.sourceforge.htmlunit</groupId>
+            <artifactId>htmlunit</artifactId>
+            <version>2.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.2.3</version>
+        </dependency>
     </dependencies>
 
 
@@ -68,6 +85,9 @@
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.1</version>
+                <configuration>
+                    <path>/</path>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -81,6 +101,22 @@
                             <targetPath>static</targetPath>
                         </resource>
                     </webResources>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>yuicompressor-maven-plugin</artifactId>
+                <version>1.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compress</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <suffix>.min</suffix>
+                    <nomunge>true</nomunge>
                 </configuration>
             </plugin>
         </plugins>
