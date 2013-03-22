@@ -28,35 +28,17 @@
             <artifactId>weld-servlet</artifactId>
             <version>1.1.10.Final</version>
         </dependency>
-        <!-- Integration if RestEasy in a CDI context provided by Weld -->
+        <!-- Integration of RestEasy in a CDI context provided by Weld -->
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-cdi</artifactId>
             <version>2.3.5.Final</version>
         </dependency>
-        <!-- Convenient HTML rendering based on JSPs for RestEasy -->
+        <!-- JSON Support for RestEasy -->
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
-            <artifactId>resteasy-html</artifactId>
+            <artifactId>resteasy-jackson-provider</artifactId>
             <version>2.3.5.Final</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.apache.httpcomponents</groupId>
-                    <artifactId>httpclient</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <!-- Latest HTTPClient for HTMLUnit to work properly -->
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>4.2.3</version>
-        </dependency>
-        <!-- JSP standard tag library -->
-        <dependency>
-            <groupId>jstl</groupId>
-            <artifactId>jstl</artifactId>
-            <version>1.2</version>
         </dependency>
         <!-- Provided Servlet API -->
         <dependency>
@@ -76,6 +58,12 @@
             <groupId>net.sourceforge.htmlunit</groupId>
             <artifactId>htmlunit</artifactId>
             <version>2.12</version>
+        </dependency>
+        <!-- Latest HTTPClient for HTMLUnit to work properly -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.2.3</version>
         </dependency>
     </dependencies>
 
@@ -118,6 +106,7 @@
                 <configuration>
                     <suffix>.min</suffix>
                     <nomunge>true</nomunge>
+                    <force>true</force>
                 </configuration>
             </plugin>
         </plugins>

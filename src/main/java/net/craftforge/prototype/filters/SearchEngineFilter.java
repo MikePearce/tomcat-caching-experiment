@@ -1,4 +1,4 @@
-package net.craftforge.prototype;
+package net.craftforge.prototype.filters;
 
 import com.gargoylesoftware.htmlunit.*;
 import com.gargoylesoftware.htmlunit.html.DomElement;

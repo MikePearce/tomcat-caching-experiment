@@ -53,7 +53,7 @@
 
     <filter>
         <filter-name>SearchEngineFilter</filter-name>
-        <filter-class>net.craftforge.prototype.SearchEngineFilter</filter-class>
+        <filter-class>net.craftforge.prototype.filters.SearchEngineFilter</filter-class>
     </filter>
 
     <filter-mapping>
@@ -104,7 +104,5 @@
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
-
-
 
 </web-app>

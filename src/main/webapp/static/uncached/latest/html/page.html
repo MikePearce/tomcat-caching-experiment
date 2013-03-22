@@ -24,6 +24,7 @@
     <h1>Hello {{yourName}}!</h1>
     <label>Name:</label>
     <input type="text" ng-model="yourName" placeholder="Enter a name here">
+    <div ng-controller="ContentCtrl">{{content.text}}</div>
 </div>
 <!-- </content> -->
 
@@ -33,7 +34,8 @@
 
 <!-- <scripts> -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/${version.angular}/angular.min.js"></script>
-<script src="../static/cached/${version}/js/app.js"></script>
+<script src="../static/cached/${version}/js/header.js"></script>
+<script src="../static/cached/${version}/js/page.js"></script>
 <!-- </scripts> -->
 
 </body>

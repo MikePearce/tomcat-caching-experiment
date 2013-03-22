@@ -1,3 +1,6 @@
-<hr>
-The Header
-<hr>
+<ul ng-controller="HeaderCtrl" class="header">
+    <li ng-repeat="menuItem in menuItemList">
+        <a href="{{menuItem.url}}">{{menuItem.name}}</a>
+    </li>
+</ul>
+
