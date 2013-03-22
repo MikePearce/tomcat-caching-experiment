@@ -4,9 +4,11 @@
 
 <urlrewrite>
 
-    <!-- HTML pages -->
+    <!-- pages -->
     <rule>
-        <from>^/page/([\w-_]+).html$</from>
+        <condition type="path-info" operator="notequal">^/rest/.*</condition>
+        <condition type="path-info" operator="notequal">^/static/.*</condition>
+        <from>^/([\w-_]+).html$</from>
         <to>/static/latest/$1/$1.html</to>
     </rule>
 
