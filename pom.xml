@@ -46,6 +46,12 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!-- Latest HTTPClient for HTMLUnit to work properly -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.2.3</version>
+        </dependency>
         <!-- JSP standard tag library -->
         <dependency>
             <groupId>jstl</groupId>
@@ -70,11 +76,6 @@
             <groupId>net.sourceforge.htmlunit</groupId>
             <artifactId>htmlunit</artifactId>
             <version>2.12</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>4.2.3</version>
         </dependency>
     </dependencies>
 
