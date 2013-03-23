@@ -10,7 +10,7 @@
     <packaging>war</packaging>
 
     <properties>
-        <maven.build.timestamp.format>yyyy-MM-dd-HH-mm-ss</maven.build.timestamp.format>
+        <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
         <version>${maven.build.timestamp}</version>
         <version.angular>1.0.5</version.angular>
     </properties>

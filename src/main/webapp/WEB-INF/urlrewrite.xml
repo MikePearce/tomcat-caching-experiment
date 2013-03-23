@@ -13,25 +13,25 @@
     <rule>
         <condition operator="notequal" type="request-url">.*/static/.*</condition>
         <condition operator="notequal" type="request-url">.*/rest/.*</condition>
-        <from>^/([^/]+/)*([\w\-_]+)(.html)?$</from>
+        <from>^/([^/]+/)*([^/]+)(.html)?$</from>
         <to>/static/latest/$2/$2.html</to>
     </rule>
 
     <!-- static files that are minified -->
     <rule>
-        <from>^/static/[\w\-]+/(.*)\.(js|css)$</from>
+        <from>^/static/[0-9]+/(.*)\.(js|css)$</from>
         <to>/static/latest/$1.min.$2</to>
     </rule>
 
     <!-- static files that are NOT minified -->
     <rule>
-        <from>^/static/[\w\-]+/(.*)\.(html)$</from>
+        <from>^/static/[0-9]+/(.*)\.(html)$</from>
         <to>/static/latest/$1.$2</to>
     </rule>
 
     <!-- rest resources -->
     <rule>
-        <from>^/rest/[\w\-]+/(.*)$</from>
+        <from>^/rest/[0-9]+/(.*)$</from>
         <to>/rest/$1</to>
     </rule>
 
