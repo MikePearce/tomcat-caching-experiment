@@ -1,5 +1,5 @@
 function ContentCtrl($scope, $http) {
-    $http.get('/rest/content').success(function(data) {
+    $http.get('/rest/${version}/content').success(function(data) {
         $scope.content = data;
     })
 }

@@ -82,6 +82,22 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.3</version>
+                <executions>
+                    <execution>
+                        <id>inplace</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>inplace</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>package</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>war</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
                     <webResources>
                         <resource>
@@ -98,12 +114,22 @@
                 <version>1.1</version>
                 <executions>
                     <execution>
+                        <phase>prepare-package</phase>
                         <goals>
                             <goal>compress</goal>
                         </goals>
                     </execution>
                 </executions>
                 <configuration>
+                    <excludes>
+                        <exclude>**/*.min.*</exclude>
+                    </excludes>
+                    <!--
+                    <sourceDirectory>${project.basedir}/src/main/webapp/static</sourceDirectory>
+                    <outputDirectory>${project.basedir}/src/main/webapp/static</outputDirectory>
+                    -->
+                    <sourceDirectory>${project.build.directory}/${project.build.finalName}/static</sourceDirectory>
+                    <outputDirectory>${project.build.directory}/${project.build.finalName}/static</outputDirectory>
                     <suffix>.min</suffix>
                     <nomunge>true</nomunge>
                     <force>true</force>

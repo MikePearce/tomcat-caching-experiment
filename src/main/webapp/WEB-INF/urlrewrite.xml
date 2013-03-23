@@ -29,4 +29,10 @@
         <to>/static/latest/$1.$2</to>
     </rule>
 
+    <!-- rest resources -->
+    <rule>
+        <from>^/rest/[\w\-]+/(.*)$</from>
+        <to>/rest/$1</to>
+    </rule>
+
 </urlrewrite>

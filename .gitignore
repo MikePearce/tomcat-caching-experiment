@@ -16,3 +16,8 @@
 # Target Folders #
 ##################
 target/
+
+# Generated Files #
+###################
+*.min.js
+*.min.css

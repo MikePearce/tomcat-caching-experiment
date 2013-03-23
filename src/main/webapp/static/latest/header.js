@@ -1,5 +1,5 @@
 function HeaderCtrl($scope, $http) {
-    $http.get('/rest/navigation').success(function(data) {
+    $http.get('/rest/${version}/navigation').success(function(data) {
         $scope.menuItemList = data;
     })
 }
