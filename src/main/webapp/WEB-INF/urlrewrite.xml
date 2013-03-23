@@ -7,13 +7,13 @@
     <!-- pages -->
     <rule>
         <from>^/?$</from>
-        <to>/static/latest/index/index.html</to>
+        <to>/index</to>
     </rule>
 
     <rule>
         <condition operator="notequal" type="request-url">.*/static/.*</condition>
         <condition operator="notequal" type="request-url">.*/rest/.*</condition>
-        <from>^/([^/]+/)*([^/]+)(.html)?$</from>
+        <from>^/([^/]+/)*([^/]+)$</from>
         <to>/static/latest/$2/$2.html</to>
     </rule>
 

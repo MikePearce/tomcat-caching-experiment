@@ -76,6 +76,9 @@
                 <version>2.1</version>
                 <configuration>
                     <path>/</path>
+                    <!--
+                    <serverXml>${project.basedir}/src/main/tomcat/server.xml</serverXml>
+                    -->
                 </configuration>
             </plugin>
             <plugin>
