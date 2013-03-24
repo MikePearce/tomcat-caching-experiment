@@ -9,7 +9,9 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
+
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
         <version>${maven.build.timestamp}</version>
         <version.angular>1.0.5</version.angular>
@@ -76,23 +78,6 @@
                 <version>2.1</version>
                 <configuration>
                     <path>/</path>
-                    <!--
-                    <serverXml>${project.basedir}/src/main/tomcat/server.xml</serverXml>
-                    -->
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.3</version>
-                <configuration>
-                    <webResources>
-                        <resource>
-                            <directory>${project.basedir}/src/main/webapp/static</directory>
-                            <filtering>true</filtering>
-                            <targetPath>static</targetPath>
-                        </resource>
-                    </webResources>
                 </configuration>
             </plugin>
             <plugin>
@@ -116,6 +101,28 @@
                     <suffix>.min</suffix>
                     <nomunge>true</nomunge>
                     <force>true</force>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.3</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>war</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <webResources>
+                        <resource>
+                            <directory>${project.basedir}/src/main/webapp/static</directory>
+                            <filtering>true</filtering>
+                            <targetPath>static</targetPath>
+                        </resource>
+                    </webResources>
                 </configuration>
             </plugin>
         </plugins>
